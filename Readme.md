@@ -37,3 +37,18 @@ Formato del `Readme` *1 punto*
 ### Test comprobarDNI
 - Este test contiene tests parametrizados para el método comprobarDNI, comprobando tanto casos positivos como negativos.
 - Además se vuelve a comprobar si la longitud del DNI   es correcta. (en caso contrario como puede darse sin el arreglo salta una excepción)
+## Explicación funcionamiento Tests
+### Test calcularLetraDNI explicación:
+Propósito:
+Verificar que el método calcularLetraDNI lance una IllegalArgumentException cuando se le pasa un DNI con una longitud que no sea de 8 dígitos.
+
+@ParameterizedTest(name = "DNI de longitud incorrecta: {0}"):
+Ejecuta el test para cada DNI de longitud incorrecta definido en el @ValueSource.
+
+@ValueSource(strings = {"1234567", "123456789"}):
+Proporciona ejemplos de cadenas que no cumplen con el requisito de 8 dígitos (7 y 9 dígitos respectivamente).
+
+assertThrows:
+Verifica que al ejecutar Main.calcularLetraDNI(dni), se lanza la excepción IllegalArgumentException. Esto es fundamental para comprobar que el método valida la longitud del DNI.
+### Test comprobarDNI explicación:
+No me da tiempo
